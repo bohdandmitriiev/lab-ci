@@ -136,3 +136,8 @@ def test_most_expensive_uses_unit_price_not_total(cart: Cart) -> None:
     item = cart.most_expensive()
     assert item is not None
     assert item.name == "book"
+
+
+def test_discount_formula_regression(cart: Cart) -> None:
+    cart.add("book", price=100.0)
+    assert cart.total(discount_percent=25) == 75.0
