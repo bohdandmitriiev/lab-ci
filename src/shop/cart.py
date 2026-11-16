@@ -1,4 +1,5 @@
-import os
+"""Shopping cart."""
+
 from dataclasses import dataclass
 from typing import Protocol
 
@@ -54,5 +55,3 @@ class Cart:
         if not self._items:
             return None
         return max(self._items.values(), key=lambda item: item.price)
-
-x = {"a":1,"b" :2}
